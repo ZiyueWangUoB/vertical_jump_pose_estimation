@@ -14,7 +14,7 @@ dependencies = [
     "opencv-python (>=4.12.0.88,<5.0.0.0)",
     "pyqt6 (>=6.9.1,<7.0.0)"
 ]
-package-mode = false
+package-mode = true
 
 
 [build-system]
