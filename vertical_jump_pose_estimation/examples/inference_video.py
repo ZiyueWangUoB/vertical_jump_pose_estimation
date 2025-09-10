@@ -3,12 +3,12 @@ import imutils
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-from vertical_jump_pose_estimation.examples.helpers import draw_points_on_img
+from vertical_jump_pose_estimation.examples.helpers import draw_points_on_img, draw_center_of_gravity
 
 # Load model
 model = YOLO("yolo11s-pose.pt")
 
-video_path = "isaiah_jump.mp4"
+video_path = "nick_emmanwori_43.mp4"
 
 # Create a VideoCapture object
 cap = cv2.VideoCapture(video_path)
@@ -25,7 +25,7 @@ while True:
         break
 
     results = model(frame)
-    frame = draw_points_on_img(results, frame)
+    frame = draw_center_of_gravity(results, frame)
 
     # Show the frame
     cv2.imshow("Video", frame)
